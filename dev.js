@@ -28,7 +28,7 @@ function core_wrap( args, apis, goal ) {
                     } else {
                         args[ i ] = newArg;
                     }
-                    return core_pack( args, apis, goal );
+                    return core_wrap( args, apis, goal );
                 };
             } )( i, api );
         }
