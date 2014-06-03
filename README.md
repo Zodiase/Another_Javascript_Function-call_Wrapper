@@ -70,13 +70,20 @@ function handleEvents( eventName, target, handler ) {
     
     // Generate package.
     return core_wrap( arguments, {
+        // collector for eventName
         'select': function ( eventName ) {
+            // do anything you want with eventName (and other parameters) here.
+            // just remember to return some value to be collected.
             return eventName;
         },
+        // collector for target
         'on': function ( target ) {
+            // do anything you want with target (and other parameters) here.
             return target;
         },
+        // collector for handler
         'by': function ( handler ) {
+            // do anything you want with handler (and other parameters) here.
             return handler;
         },
     },  function ( eventName, target, handler ) {
