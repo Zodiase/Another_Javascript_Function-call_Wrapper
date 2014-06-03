@@ -79,13 +79,15 @@ function handleEvents( eventName, target, handler ) {
     } );
 }
 
+// more natural expression
+
 handleEvents('click mousedown mouseup')
     .on(document.body)
     .by(function (event) {
         console.log(event.type, event.screenX, event.screenY);
     });
 
-// or
+// or with some re-ordering
 
 handleEvents('click mousedown mouseup')
     .by(function (event) {
@@ -93,15 +95,16 @@ handleEvents('click mousedown mouseup')
     })
     .on(document.body);
 
-// or
+// or with all argument collectors
 
-handleEvents().select('click mousedown mouseup')
+handleEvents()
+    .select('click mousedown mouseup')
     .by(function (event) {
         console.log(event.type, event.screenX, event.screenY);
     })
     .on(document.body);
 
-// or like the original way
+// or in the original way
 
 handleEvents('click mousedown mouseup', document.body, function (event) {
     console.log(event.type, event.screenX, event.screenY);
