@@ -100,4 +100,10 @@ handleEvents().select('click mousedown mouseup')
         console.log(event.type, event.screenX, event.screenY);
     })
     .on(document.body);
+
+// or like the original way
+
+handleEvents('click mousedown mouseup', document.body, function (event) {
+    console.log(event.type, event.screenX, event.screenY);
+});
 `````
