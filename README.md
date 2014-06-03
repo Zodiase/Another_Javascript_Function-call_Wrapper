@@ -40,18 +40,6 @@ handleEvents('click mousedown mouseup', document.body, function (event) {
 });
 `````
 
-Helper Function for more Expressive Code
-
-`````Javascript
-function handleEvents(eventName, target, handler) {
-    $(target).on(eventName, target, handler, handler);
-}
-
-handleEvents('click mousedown mouseup', document.body, function (event) {
-    console.log(event.type, event.screenX, event.screenY);
-});
-`````
-
 Helper Function done with *`core_wrap`*
 
 `````Javascript
